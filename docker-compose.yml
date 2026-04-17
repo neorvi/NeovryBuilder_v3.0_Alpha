@@ -6,18 +6,23 @@ services:
     working_dir: /app
     volumes:
       - .:/app
+      - /app/node_modules # Evita conflictos de dependencias
     ports:
       - "3000:3000"
     command: sh -c "npm install && npm run dev"
     environment:
       - NODE_ENV=development
+      - MONGO_URI=mongodb://crm:27017/crm_db
+    depends_on:
+      - crm
 
   crm:
-    image: mongo
+    image: mongo:latest
     ports:
       - "27017:27017"
     volumes:
       - mongo-data:/data/db
 
 volumes:
-  mongo-data:t
+  mongo-data:
+
