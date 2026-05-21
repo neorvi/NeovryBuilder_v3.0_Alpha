@@ -1,3 +1,8 @@
+// ================================
+// NeovryBuilder v3.0 Alpha - Landing Page
+// Inicialización: 21/05/2026
+// ================================
+
 import Head from 'next/head';
 import React from 'react';
 
